@@ -6,14 +6,25 @@ using namespace std;
 
 int main() {
 
-	int code = MessageBoxA(0, "context", "title", MB_OKCANCEL);
+	int code;
 
-	if (code == IDOK) {
-		cout << "ok";
-	}
-	else if (code == IDCANCEL) {
-		cout << "cancel";
-	}
+	do {
+		code = MessageBoxA(0, "uh oh, ran into an error", "VIRUS.exe", MB_CANCELTRYCONTINUE);
+
+		switch (code) {
+		case IDTRYAGAIN:
+			cout << "retrying!";
+			break;
+		case IDCANCEL:
+			cout << "YOU CANNOT CANCELL!!!";
+			break;
+		case IDCONTINUE:
+			cout << "ok :3";
+			break;
+		}
+
+		cout << endl;
+	} while (code != IDCONTINUE);
 
 	cin.get();
 	return 0;
