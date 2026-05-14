@@ -1,0 +1,2 @@
+﻿  main.cpp
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\flappyBird\flappyBird\main.cpp(6,11): error C2065: 'SDL_INIT_EVERYTHING_deprecated_list_flags_explicitly': undeclared identifier

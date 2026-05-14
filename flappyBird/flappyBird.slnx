@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="flappyBird/flappyBird.vcxproj" />
+  <Project Path="flappyBird/flappyBird.vcxproj" Id="3ce58336-38e7-445d-a22c-77b017720963" />
 </Solution>
