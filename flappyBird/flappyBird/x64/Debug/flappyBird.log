@@ -1,2 +1,2 @@
 ﻿  main.cpp
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\flappyBird\flappyBird\main.cpp(6,11): error C2065: 'SDL_INIT_EVERYTHING_deprecated_list_flags_explicitly': undeclared identifier
+D:\Media\Github\cpp-flappy-bird\flappyBird\flappyBird\main.cpp(13,3): error C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
