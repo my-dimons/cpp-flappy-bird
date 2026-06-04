@@ -10,10 +10,13 @@ class KeyboardInput;
 int main()
 {
   KeyboardInput keyboardInput;
-  KEY_EVENT_RECORD key;
+  KEY_EVENT_RECORD krec;
   for (; ; )
   {
-    keyboardInput.getconchar(key);
-    keyboardInput.outputPressedKey(key);
+    keyboardInput.getconchar(krec);
+    //keyboardInput.outputPressedKey(krec);
+    if (keyboardInput.keyPressed(keyboardInput.getJumpKeys(), krec)) {
+      cout << "JUMPING" << endl;
+    }
   }
 }

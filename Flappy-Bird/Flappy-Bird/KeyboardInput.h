@@ -17,11 +17,12 @@ public:
 	/// Outputs the pressed key to the console
 	/// </summary>
 	void outputPressedKey(KEY_EVENT_RECORD) const;
+	bool keyPressed(Key key, KEY_EVENT_RECORD) const;
 	Key getJumpKeys() const { return jumpKeys; }
 	Key getQuitKeys() const { return quitKeys; }
 private:
 	// Codes
-	const vector<int> jumpKeyCodes = {32, 38, 38};
+	const vector<int> jumpKeyCodes = { 32, 38, 87 };
 	const vector<int> quitKeyCodes = { 27, 81 };
 	// Keys
 	Key jumpKeys;

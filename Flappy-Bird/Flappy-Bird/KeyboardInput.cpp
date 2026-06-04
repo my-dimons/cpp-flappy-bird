@@ -29,3 +29,15 @@ void KeyboardInput::outputPressedKey(KEY_EVENT_RECORD krec) const {
   std::cout << "key: " << krec.uChar.AsciiChar
     << " | code: " << krec.wVirtualKeyCode << std::endl;
 }
+
+bool KeyboardInput::keyPressed(Key key, KEY_EVENT_RECORD krec) const {
+  bool keyPressed = false;
+  int pressedKey = krec.wVirtualKeyCode;
+
+  for (int key : key.getKeys()) {
+    if (key == pressedKey)
+      keyPressed = true;
+  }
+
+  return keyPressed;
+}
