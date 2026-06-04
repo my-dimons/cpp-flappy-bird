@@ -1,2 +1,2 @@
 ﻿  Main.cpp
-  Flappy-Bird.vcxproj -> D:\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe
+LINK : fatal error LNK1168: cannot open D:\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe for writing
