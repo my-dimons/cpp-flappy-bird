@@ -1,29 +1,21 @@
 #include <iostream>
 #include <windows.h>
-#include <array>
+#include <vector>
+#include "Key.h"
 
 using namespace std;
 
-class Key {
-public:
-  Key(int aKeys[3]) {
-    for (int i = 0; i < sizeof(aKeys); i++) {
-      keys[i] = aKeys[i];
-    }
+class KeyboardInput;
 
-    keys[0] = aKeys[0];
-  }
-private:
-  int keys[];
-};
+
 
 class KeyboardInput {
 public:
-  //int const jumpKeys[3] = { 32, 38, 87 };
-  int test[3] = { 32, 38, 87 };
-  //Key jumpKeys(test);
-  //int const quitKey = 
-  // 27, 81
+  //vector<string> words = { "Test" };
+  //const vector<int> arr = { 32, 38, 87 };
+  Key jumpKeys;
+  KeyboardInput() : jumpKeys( { 32, 38, 87 } ) {}
+
   /// <summary>
   /// Sets krec to the keyboards pressed key
   /// </summary>
@@ -62,7 +54,6 @@ public:
       << " | code: " << krec.wVirtualKeyCode << endl;
   }
 };
-
 
 int main()
 {
