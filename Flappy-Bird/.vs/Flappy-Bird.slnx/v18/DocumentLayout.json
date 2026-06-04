@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|D:\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "D:\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp",
+              "RelativeDocumentMoniker": "Flappy-Bird\\Main.cpp",
+              "ToolTip": "D:\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp",
+              "RelativeToolTip": "Flappy-Bird\\Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-04T05:15:34.402Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
