@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\KeyboardInput.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,16 +15,12 @@
       "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\Key.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\KeyboardInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Key.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\Key.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F505ABD3-D586-4B89-B920-6DF899040489}|Flappy-Bird\\Flappy-Bird.vcxproj|solutionrelative:Flappy-Bird\\KeyboardInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 162,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,58 +38,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "KeyboardInput.cpp",
               "DocumentMoniker": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.cpp",
               "RelativeDocumentMoniker": "Flappy-Bird\\KeyboardInput.cpp",
               "ToolTip": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.cpp",
               "RelativeToolTip": "Flappy-Bird\\KeyboardInput.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-04T21:39:38.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Key.h",
               "DocumentMoniker": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Key.h",
               "RelativeDocumentMoniker": "Flappy-Bird\\Key.h",
               "ToolTip": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Key.h",
               "RelativeToolTip": "Flappy-Bird\\Key.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-04T21:13:14.765Z"
+              "WhenOpened": "2026-06-04T21:13:14.765Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "KeyboardInput.h",
               "DocumentMoniker": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.h",
               "RelativeDocumentMoniker": "Flappy-Bird\\KeyboardInput.h",
               "ToolTip": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\KeyboardInput.h",
               "RelativeToolTip": "Flappy-Bird\\KeyboardInput.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-04T21:13:13.946Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp",
               "RelativeDocumentMoniker": "Flappy-Bird\\Main.cpp",
               "ToolTip": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp",
               "RelativeToolTip": "Flappy-Bird\\Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-04T21:09:07.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Key.cpp",
               "DocumentMoniker": "C:\\Users\\kdboy\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Key.cpp",
               "RelativeDocumentMoniker": "Flappy-Bird\\Key.cpp",

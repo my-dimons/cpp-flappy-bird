@@ -6,17 +6,19 @@
 
 using namespace std;
 
-class KeyboardInput;
 int main()
 {
   KeyboardInput keyboardInput;
   KEY_EVENT_RECORD krec;
-  for (; ; )
-  {
+
+  do {
     keyboardInput.getconchar(krec);
     //keyboardInput.outputPressedKey(krec);
     if (keyboardInput.keyPressed(keyboardInput.getJumpKeys(), krec)) {
       cout << "JUMPING" << endl;
     }
-  }
+  } while (!keyboardInput.keyPressed(keyboardInput.getQuitKeys(), krec));
+
+  cout << "Quitting Game";
+  return 0;
 }
