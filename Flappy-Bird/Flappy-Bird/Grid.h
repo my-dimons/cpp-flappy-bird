@@ -19,6 +19,7 @@ public:
 	void printGrid();
 	int getGridX() const { return gridX; }
 	int getGridY() const { return gridY; }
+	int setPointChar(GridPoint& point, char aChar) { point.setChar(aChar); }
 private:
 	void printLines();
 	void printEmptySpace(int space);

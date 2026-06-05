@@ -10,76 +10,46 @@
 #include "KeyboardInput.h"
 #include "Grid.h"
 
-std::condition_variable cv;
+using namespace std;
+
 KeyboardInput keyboardInput;
 KEY_EVENT_RECORD krec;
+Grid grid;
 
-using namespace std;
+bool gameRunning = true;
 
 double long const FPS = 1 / 6;
 
-void read_quit_value() {
-  if (keyboardInput.keyPressed(keyboardInput.getQuitKeys(), krec)) {
-    cv.notify_one();
+void generateGrid() {
+  using namespace std::literals::chrono_literals;
+
+  while (gameRunning) {
+    grid.printGrid();
+    std::this_thread::sleep_for(1s);
   }
 }
 
-void getconchar() {
-  keyboardInput.getconchar(krec);
+void handleInput() {
+  while (gameRunning) {
+    keyboardInput.getconchar(krec);
+    //keyboardInput.outputPressedKey(krec);
+    if (keyboardInput.keyPressed(keyboardInput.getJumpKeys(), krec)) {
+      cout << "JUMPING" << endl;
+    }
+    else if (keyboardInput.keyPressed(keyboardInput.getQuitKeys(), krec)) {
+      cout << "Quitting Game";
+      gameRunning = false;
+    }
+  }
 }
 
 int main()
 {
-  Grid grid;
-  std::thread th(read_quit_value);
-  std::thread ch(getconchar);
-  bool frameGenerated = true;
-
-  std::mutex mtx;
-  std::unique_lock<std::mutex> lck(mtx);
-  //while (cv.wait_for(lck, std::chrono::seconds(1)) == std::cv_status::timeout) {
-  //  std::cout << '.' << std::endl;
-  //}
-
-  while (cv.wait_for(lck, std::chrono::seconds(1)) == std::cv_status::timeout) {
-    //cout << "*";
-    //keyboardInput.outputPressedKey(krec);
-    // 
-    //if (keyboardInput.keyPressed(keyboardInput.getJumpKeys(), krec)) {
-    //  cout << "JUMPING" << endl;
-    //}
-
-    grid.printGrid();
-  }
-
-  cout << "Quitting Game";
+  std::thread grid(generateGrid);
+  std::thread input(handleInput);
+  
+  grid.join();
+  input.join();
+  
   return 0;
 }
-
-//// condition_variable::wait_for example
-//#include <iostream>           // std::cout
-//
-//
-//int value;
-//
-//void read_value() {
-//  std::cin >> value;
-//  cv.notify_one();
-//}
-//
-//int main()
-//{
-//  std::cout << "Please, enter an integer (I'll be printing dots): \n";
-//  std::thread th(read_value);
-//
-//  std::mutex mtx;
-//  std::unique_lock<std::mutex> lck(mtx);
-//  while (cv.wait_for(lck, std::chrono::seconds(1)) == std::cv_status::timeout) {
-//    std::cout << '.' << std::endl;
-//  }
-//  std::cout << "You entered: " << value << '\n';
-//
-//  th.join();
-//
-//  return 0;
-//}
