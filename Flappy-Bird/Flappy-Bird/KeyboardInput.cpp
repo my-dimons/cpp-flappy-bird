@@ -18,6 +18,7 @@ bool KeyboardInput::getconchar(KEY_EVENT_RECORD& krec) {
     if (irec.EventType == KEY_EVENT
       && ((KEY_EVENT_RECORD&)irec.Event).bKeyDown)
     {
+      cout << "char";
       krec = (KEY_EVENT_RECORD&)irec.Event;
       return true;
     }

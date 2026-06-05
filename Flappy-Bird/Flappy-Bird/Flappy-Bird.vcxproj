@@ -139,11 +139,15 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="GridPoint.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="GridPoint.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="KeyboardInput.h" />
   </ItemGroup>
