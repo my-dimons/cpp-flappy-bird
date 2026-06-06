@@ -1,2 +1,9 @@
-﻿  Main.cpp
-  Flappy-Bird.vcxproj -> D:\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe
+﻿  Bird.cpp
+  Grid.cpp
+D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\Bird.cpp(5,20): error C2509: 'Update': member function not declared in 'Bird'
+      D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\Bird.h(5,7):
+      see declaration of 'Bird'
+  
+  Main.cpp
+  Generating Code...
+D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\Grid.cpp(42,1): warning C4715: 'Grid::getPoint': not all control paths return a value

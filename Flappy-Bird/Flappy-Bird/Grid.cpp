@@ -7,7 +7,7 @@ void Grid::printGrid() {
 	cout << endl;
 
 	for (GridPoint point : grid) {
-		cout << "*";
+		cout << point.getChar();
 		if (point.getX() == getGridX() - 1) {
 			cout << endl;
 		}
@@ -25,5 +25,18 @@ void Grid::printEmptySpace(int space) {
 void Grid::printLines() {
 	for (int i = 0; i < getGridX(); i++) {
 		cout << "-";
+	}
+}
+
+GridPoint& Grid::getPoint(GridPoint pos) {
+	bool inBounds = pos.getX() <= getGridX() && pos.getY() <= getGridY();
+	if (!inBounds) {
+		// return something
+	}
+
+	for (GridPoint& point : grid) {
+		if (pos.getX() == point.getX() && pos.getY() == point.getY()) {
+			return point;
+		}
 	}
 }

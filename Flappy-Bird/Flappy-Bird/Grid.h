@@ -1,6 +1,7 @@
 #pragma once
 #include "GridPoint.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -17,13 +18,14 @@ public:
 		cout << "Generating Grid...";
 	}
 	void printGrid();
-	int getGridX() const { return gridX; }
-	int getGridY() const { return gridY; }
+	static int getGridX() { return gridX; }
+	static int getGridY() { return gridY; }
+	GridPoint& getPoint(GridPoint point);
 	int setPointChar(GridPoint& point, char aChar) { point.setChar(aChar); }
 private:
-	void printLines();
-	void printEmptySpace(int space);
-	int const gridX = 100;
-	int const gridY = 30;
+	static void printLines();
+	static void printEmptySpace(int space);
+	static int const gridX = 100;
+	static int const gridY = 30;
 	vector<GridPoint> grid;
 };

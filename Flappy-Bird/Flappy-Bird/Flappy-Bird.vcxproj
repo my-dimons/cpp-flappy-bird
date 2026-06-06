@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="GridPoint.cpp" />
     <ClCompile Include="Key.cpp" />
@@ -146,10 +147,12 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bird.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="GridPoint.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="KeyboardInput.h" />
+    <ClInclude Include="Object.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
