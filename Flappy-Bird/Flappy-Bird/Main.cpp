@@ -1,9 +1,35 @@
+#include "raylib.h"
 #include <iostream>
 
-using namespace std;
+const int screenWidth = 800;
+const int screenHeight = 450;
+
+void InitGame() {
+	InitWindow(screenWidth, screenHeight, "Flappy Bird");
+	SetTargetFPS(60);
+}
+
+void RenderFrame() {
+	ClearBackground(RAYWHITE);
+	DrawText("Text!", 190, 200, 20, BLACK);
+}
+
+void GameLoop() {
+	while (!WindowShouldClose()) {
+		BeginDrawing();
+
+		RenderFrame();
+
+		EndDrawing();
+	}
+}
 
 int main() {
-	cout << "Hello World!";
+	InitGame();
+
+	GameLoop();
+
+	CloseWindow();
 
 	return 0;
 }
