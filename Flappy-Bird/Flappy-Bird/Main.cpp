@@ -18,14 +18,15 @@ Grid grid;
 
 bool gameRunning = true;
 
-double long const FPS = 1 / 6;
+int FPS = 3;
+std::chrono::duration<double> FPS_TIME = (1.0s / FPS);
 
 void generateGrid() {
   using namespace std::literals::chrono_literals;
 
   while (gameRunning) {
     grid.printGrid();
-    std::this_thread::sleep_for(1s);
+    std::this_thread::sleep_for(FPS_TIME);
   }
 }
 

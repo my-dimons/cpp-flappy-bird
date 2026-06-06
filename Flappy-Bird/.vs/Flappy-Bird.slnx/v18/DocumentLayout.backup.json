@@ -62,8 +62,7 @@
               "RelativeToolTip": "Flappy-Bird\\GridPoint.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-05T04:53:34.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T04:53:34.679Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Flappy-Bird\\GridPoint.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-05T04:53:23.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T04:53:23.229Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "Flappy-Bird\\Grid.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-05T04:53:03.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T04:53:03.417Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "Flappy-Bird\\Grid.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-05T04:52:57.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T04:52:57.664Z"
             },
             {
               "$type": "Document",
@@ -138,8 +134,7 @@
               "RelativeToolTip": "Flappy-Bird\\Key.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-05T04:14:58.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T04:14:58.806Z"
             },
             {
               "$type": "Document",
@@ -151,8 +146,7 @@
               "RelativeToolTip": "Flappy-Bird\\KeyboardInput.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-05T04:14:56.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T04:14:56.975Z"
             },
             {
               "$type": "Document",
@@ -162,7 +156,7 @@
               "RelativeDocumentMoniker": "Flappy-Bird\\Main.cpp",
               "ToolTip": "D:\\Media\\Github\\cpp-flappy-bird\\Flappy-Bird\\Flappy-Bird\\Main.cpp",
               "RelativeToolTip": "Flappy-Bird\\Main.cpp",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAawDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABQAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-04T05:15:34.402Z",
               "EditorCaption": ""
