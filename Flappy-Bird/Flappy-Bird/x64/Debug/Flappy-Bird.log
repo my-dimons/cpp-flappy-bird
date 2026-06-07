@@ -1,5 +1,2 @@
 ﻿  GameManager.cpp
-  Main.cpp
-  Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Flappy-Bird.vcxproj -> D:\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe
