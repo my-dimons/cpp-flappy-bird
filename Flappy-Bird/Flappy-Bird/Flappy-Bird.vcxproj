@@ -142,12 +142,16 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bird.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Pipes.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bird.h" />
     <ClInclude Include="GameConstants.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Pipes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

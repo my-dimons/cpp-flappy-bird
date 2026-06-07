@@ -1,4 +1,8 @@
 #pragma once
+#include "Bird.h"
+#include "Pipes.h"
+#include <vector>
+
 class GameManager
 {
 public:
@@ -7,8 +11,10 @@ public:
 	void CloseGame();
 private:
 	void RenderFrame();
-	void RenderMode2D();
+	void RenderObjects();
 	void RenderText();
 	void RenderDebugText();
+	void UpdatePlayer(Bird* bird, float deltaTime);
+	void UpdateEnv(std::vector<Pipe*>* pipes, float deltaTime);
 };
 

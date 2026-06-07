@@ -1,2 +1,6 @@
 ﻿  GameManager.cpp
+D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(68,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(68,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(68,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(68,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Flappy-Bird.vcxproj -> D:\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe
