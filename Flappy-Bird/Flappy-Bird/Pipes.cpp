@@ -2,20 +2,28 @@
 #include "GameConstants.h"
 #include <iostream>
 
-std::vector<Pipe*> GeneratePipes(int amount) {
+std::vector<Pipe> GeneratePipes(int amount) {
 	int offset = 0;
-	std::vector<Pipe*> pipes;
+	std::vector<Pipe> pipes;
 
 	for (int i = 0; i < amount; i++) {
-		Pipe topPipe;
-		Pipe* bottomPipe = new Pipe();
+		Pipe topPipe{};
+		Pipe bottomPipe{};
 
-		// Generate pipe 1
-		topPipe.rect = { (float)SCREEN_WIDTH + offset, 300, PIPE_WIDTH, 300 };
+		float x = (float)SCREEN_WIDTH + offset;
+		// Generate top pipe
+		float topPipeHeight = (float)(rand() % (SCREEN_HEIGHT - PIPE_GAP));
+		topPipe.rect = { x, 0, PIPE_WIDTH, topPipeHeight };
 		topPipe.color = GREEN;
 
-		std::cout << topPipe.rect.x;
-		pipes.push_back(&topPipe);
+		// Generate bottom pipe
+		float bottomPipeY = topPipe.rect.y + PIPE_GAP + topPipe.rect.height;
+		bottomPipe.rect = { x, bottomPipeY, PIPE_WIDTH, SCREEN_HEIGHT };
+		bottomPipe.color = GREEN;
+
+		pipes.push_back(topPipe);
+		pipes.push_back(bottomPipe);
+
 		offset += PIPE_X_GAP;
 	}
 

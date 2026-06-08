@@ -15,6 +15,6 @@ private:
 	void RenderText();
 	void RenderDebugText();
 	void UpdatePlayer(Bird* bird, float deltaTime);
-	void UpdateEnv(std::vector<Pipe*>* pipes, float deltaTime);
+	void UpdateEnv(std::vector<Pipe>* pipes, float deltaTime);
 };
 

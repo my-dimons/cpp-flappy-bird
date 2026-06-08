@@ -1,22 +1,23 @@
 #pragma once
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 450
-#define FPS 60
-#define DRAW_DEBUG_TEXT true
+constexpr int SCREEN_WIDTH = 1920;
+constexpr int SCREEN_HEIGHT = 1080;
+constexpr int FPS = 60;
+constexpr bool DRAW_DEBUG_TEXT = true;
 
-#define SCROLLING_SPEED 300
+constexpr auto SCROLLING_SPEED = 300;
+
 // BIRD
-#define BIRD_X_POS 80
-#define BIRD_JUMP_SPEED 350.0f
-#define GRAVITY 800
+constexpr int BIRD_X_POS = 140;
+constexpr float BIRD_JUMP_SPEED = 400.0f;
+constexpr int GRAVITY = 800;
 
 // PIPES
-#define PIPE_X_POS SCREEN_WIDTH + 30
-#define PIPE_GAP 50
-#define PIPE_WIDTH 40
-#define PIPE_TIME 5
-#define PIPE_X_GAP 300
+constexpr int PIPE_X_POS = SCREEN_WIDTH + 30;
+constexpr int PIPE_GAP = 300;
+constexpr int PIPE_WIDTH = 80;
+constexpr int PIPE_TIME = 5;
+constexpr int PIPE_X_GAP = 700;
 
 struct GameConstants
 {

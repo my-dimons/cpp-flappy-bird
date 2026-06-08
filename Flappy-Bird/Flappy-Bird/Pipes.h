@@ -8,4 +8,4 @@ struct Pipe {
 	Color color;
 };
 
-std::vector<Pipe*> GeneratePipes(int amount);
+std::vector<Pipe> GeneratePipes(int amount);

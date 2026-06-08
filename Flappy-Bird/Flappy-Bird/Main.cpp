@@ -2,6 +2,8 @@
 #include <iostream>
 
 int main() {
+	srand(time(0));
+
 	GameManager manager;
 
   manager.InitGame();
