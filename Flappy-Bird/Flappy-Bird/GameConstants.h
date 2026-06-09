@@ -3,7 +3,7 @@
 constexpr int SCREEN_WIDTH = 1920;
 constexpr int SCREEN_HEIGHT = 1080;
 constexpr int FPS = 60;
-constexpr bool DEBUG = true;
+constexpr bool DEBUG = false;
 
 constexpr auto SCROLLING_SPEED = 300;
 

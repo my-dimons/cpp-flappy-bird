@@ -15,6 +15,11 @@ std::vector<Pipe> pipes;
 
 const float circleRadius = 58;
 const float birdHitboxRadius = 30;
+
+float timer;
+int score;
+int highscore;
+
 bool gameOver = false;
 
 void GameManager::CloseGame() {
@@ -23,7 +28,7 @@ void GameManager::CloseGame() {
 
 void GameManager::InitGame() {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, gameConstants.windowName);
-	SetTargetFPS(FPS);
+	SetTargetFPS(0);
 
 	RestartGame();
 }
@@ -31,14 +36,23 @@ void GameManager::InitGame() {
 void GameManager::GameLoop() {
 	while (!WindowShouldClose()) {
 		float deltaTime = GetFrameTime();
+		timer += deltaTime;
 
 		if (!gameOver) {
 			UpdatePlayer(&bird, deltaTime);
 			UpdateEnv(&pipes, deltaTime);
+
+			if ((int)timer >= score) {
+				score++;
+			}
 		} else {
 			if (IsKeyPressed(KEY_V)) {
 				RestartGame();
 				gameOver = false;
+			}	
+			
+			if (score > highscore) {
+				highscore = score;
 			}
 		}
 
@@ -57,9 +71,12 @@ void GameManager::RenderFrame() {
 }
 
 void GameManager::RestartGame() {
-	pipes = GeneratePipes(200);
+	pipes = GeneratePipes(100000);
 	bird.position = { BIRD_X_POS, SCREEN_HEIGHT / 2 };
 	bird.speed = 0;
+
+	timer = 0;
+	score = 0;
 }
 
 void GameManager::RenderObjects() {
@@ -85,23 +102,33 @@ void GameManager::RenderText() {
 	if (DEBUG)
 		RenderDebugText();
 
-	DrawText("Click 'Space' to jump", 10, 30, 20, DARKGRAY);
-	DrawText("Click 'Esc' to quit", 10, 50, 20, DARKGRAY);
+	DrawText("Click 'Space' to jump", 10, 10, 20, DARKGRAY);
+	DrawText("Click 'Esc' to quit", 10, 30, 20, DARKGRAY);
+	DrawText(TextFormat("Score: %i", score), 10, 50, 20, DARKGRAY);
+	const char* fpsText = TextFormat("FPS: %i/%i (%02.02f ms)", GetFPS(), FPS, GetFrameTime());
+	DrawText(fpsText, 10, 100, 20, DARKGREEN);
 
 	if (gameOver) {
 		float size = 60;
-		const char* text = ("GAME OVER! score: " + 0);
+		const char* text = "GAME OVER!";
 		DrawText(text, (SCREEN_WIDTH / 2) - (MeasureText(text, size) / 2), (SCREEN_HEIGHT / 2) - size, size, BLACK);
-		float size2 = 30;
-		const char* text2 = ("Click 'V' to play again!");
+
+		float size2 = 40;
+		const char* text2 = TextFormat(("Score: %i (Highscore: %i)"), score, highscore);
+
 		DrawText(text2, (SCREEN_WIDTH / 2) - (MeasureText(text2, size2) / 2), (SCREEN_HEIGHT / 2), size2, GRAY);
+
+		float size3 = 30;
+		const char* text3 = ("Click 'V' to play again!");
+		DrawText(text3, (SCREEN_WIDTH / 2) - (MeasureText(text3, size3) / 2), (SCREEN_HEIGHT / 2) + size2, size3, GRAY);
 	}
 }
 
 void GameManager::RenderDebugText() {
 	// FPS Text
-	const char* fpsText = TextFormat("FPS: %i/%i (%02.02f ms)", GetFPS(), FPS, GetFrameTime());
-	DrawText(fpsText, 10, 10, 20, DARKGREEN);
+
+	const char* timerText = TextFormat("Timer: %03.0f ms", timer * 1000, FPS, GetFrameTime());
+	DrawText(timerText, 10, 130, 20, DARKGREEN);
 }
 
 void GameManager::UpdatePlayer(Bird* bird, float deltaTime) {
