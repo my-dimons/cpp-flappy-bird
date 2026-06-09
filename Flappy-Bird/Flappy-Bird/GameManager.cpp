@@ -14,7 +14,8 @@ Bird bird = { 0 };
 std::vector<Pipe> pipes;
 
 const float circleRadius = 58;
-bool collision = false;
+const float birdHitboxRadius = 30;
+bool gameOver = false;
 
 void GameManager::CloseGame() {
 	CloseWindow();
@@ -24,17 +25,22 @@ void GameManager::InitGame() {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, gameConstants.windowName);
 	SetTargetFPS(FPS);
 
-	pipes = GeneratePipes(200);
-	std::cout << pipes.size();
-	bird.position = { BIRD_X_POS, 0 };
+	RestartGame();
 }
 
 void GameManager::GameLoop() {
 	while (!WindowShouldClose()) {
 		float deltaTime = GetFrameTime();
 
-		UpdatePlayer(&bird, deltaTime);
-		UpdateEnv(&pipes, deltaTime);
+		if (!gameOver) {
+			UpdatePlayer(&bird, deltaTime);
+			UpdateEnv(&pipes, deltaTime);
+		} else {
+			if (IsKeyPressed(KEY_V)) {
+				RestartGame();
+				gameOver = false;
+			}
+		}
 
 		BeginDrawing();
 		RenderFrame();
@@ -50,25 +56,46 @@ void GameManager::RenderFrame() {
 	RenderText();
 }
 
-void GameManager::RenderObjects() {
-	DrawCircleV(bird.position, circleRadius, GREEN);
+void GameManager::RestartGame() {
+	pipes = GeneratePipes(200);
+	bird.position = { BIRD_X_POS, SCREEN_HEIGHT / 2 };
+	bird.speed = 0;
+}
 
-	//std::cout << pipes[0]->rect.x << std::endl;
-	for (Pipe pipe : pipes) {
-		//DrawRectangle(30, 30, 30, 30, GREEN);
-		//std::cout << pipe->rect.x << std::endl;
+void GameManager::RenderObjects() {
+	// Draw bird
+	DrawCircleV(bird.position, circleRadius, SKYBLUE);
+	if (DEBUG) {
+		DrawRectangle(
+			bird.position.x - birdHitboxRadius,
+			bird.position.y - birdHitboxRadius,
+			birdHitboxRadius * 2,
+			birdHitboxRadius * 2,
+			RED);
+	}
+
+	for (const Pipe pipe : pipes) {
 		DrawRectangle(pipe.rect.x, pipe.rect.y, pipe.rect.width, pipe.rect.height, pipe.color);
 	}
-	//DrawLine(0, -SCREEN_HEIGHT * 10, 0, SCREEN_HEIGHT * 10, RED); // vertical line
-	//DrawLine(-SCREEN_WIDTH * 10, 0, SCREEN_WIDTH * 10, 0, RED); // horizontal line
+	DrawLine(SCREEN_WIDTH / 2, -SCREEN_HEIGHT * 10, SCREEN_WIDTH / 2, SCREEN_HEIGHT * 10, RED); // vertical line
+	DrawLine(-SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, RED); // horizontal line
 }
 
 void GameManager::RenderText() {
-	if (DRAW_DEBUG_TEXT)
+	if (DEBUG)
 		RenderDebugText();
 
-	DrawText("Move the ball with the arrow keys!", 10, 30, 20, DARKGRAY);
+	DrawText("Click 'Space' to jump", 10, 30, 20, DARKGRAY);
 	DrawText("Click 'Esc' to quit", 10, 50, 20, DARKGRAY);
+
+	if (gameOver) {
+		float size = 60;
+		const char* text = ("GAME OVER! score: " + 0);
+		DrawText(text, (SCREEN_WIDTH / 2) - (MeasureText(text, size) / 2), (SCREEN_HEIGHT / 2) - size, size, BLACK);
+		float size2 = 30;
+		const char* text2 = ("Click 'V' to play again!");
+		DrawText(text2, (SCREEN_WIDTH / 2) - (MeasureText(text2, size2) / 2), (SCREEN_HEIGHT / 2), size2, GRAY);
+	}
 }
 
 void GameManager::RenderDebugText() {
@@ -85,17 +112,18 @@ void GameManager::UpdatePlayer(Bird* bird, float deltaTime) {
 	// Collision detection
 	for (int i = 0; i < pipes.size(); i++) {
 		Pipe* o = &pipes[i];
-		Vector2* p = &(bird->position);
+		Rectangle* pRect = new Rectangle(
+			bird->position.x - birdHitboxRadius,
+			bird->position.y - birdHitboxRadius,
+			birdHitboxRadius * 2,
+			birdHitboxRadius * 2);
 
-		bool colliding = (
-			p->x < o->rect.x + o->rect.width &&
-			p->x + circleRadius > o->rect.x &&
-			p->y < o->rect.y + o->rect.height &&
-			p->y + +circleRadius > o->rect.y
-		);
+		bool colliding = 
+			IsColliding(pRect, &(o->rect)) || 
+			bird->position.y >= SCREEN_HEIGHT;
 
 		if (colliding) {
-			collision = true;
+			gameOver = true;
 			return;
 		}
 	}
@@ -112,19 +140,18 @@ void GameManager::UpdatePlayer(Bird* bird, float deltaTime) {
 	}
 
 	bird->speed += GRAVITY * deltaTime;
+}
 
-
-	
+bool GameManager::IsColliding(Rectangle* dx, Rectangle* dy) {
+	return
+		dx->x < dy->x + dy->width &&
+		dx->x + dx->width > dy->x &&
+		dx->y < dy->y + dy->height &&
+		dx->y + dx->height > dy->y;
 }
 
 void GameManager::UpdateEnv(std::vector<Pipe>* aPipes, float deltaTime) {
 	for (int i = 0; i < pipes.size(); i++) {
 		pipes[i].rect.x -= (SCROLLING_SPEED * deltaTime);
 	}
-
-	//for (Pipe pipe : *pipes) {
-	//	Pipe* pPipe = *pipe;
-	//	pipe.rect.x -= (SCROLLING_SPEED * deltaTime);
-	//	//std::cout << pipe->rect.x << std::endl;
-	//}
 }

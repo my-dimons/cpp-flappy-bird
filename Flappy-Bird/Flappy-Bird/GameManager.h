@@ -16,5 +16,7 @@ private:
 	void RenderDebugText();
 	void UpdatePlayer(Bird* bird, float deltaTime);
 	void UpdateEnv(std::vector<Pipe>* pipes, float deltaTime);
+	void RestartGame();
+	bool IsColliding(Rectangle* dx, Rectangle* dy);
 };
 
