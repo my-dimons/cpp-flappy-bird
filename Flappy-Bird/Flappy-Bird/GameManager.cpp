@@ -3,12 +3,7 @@
 #include "raylib.h"
 #include "Pipes.h"
 #include <vector>
-#include <math.h>
 #include <iostream>
-#include <thread>
-#include <chrono>
-
-GameConstants gameConstants;
 
 Bird bird = { 0 };
 std::vector<Pipe> pipes;
@@ -20,6 +15,8 @@ float timer;
 int score;
 int highscore;
 
+int pipeTimer;
+
 bool gameOver = false;
 
 void GameManager::CloseGame() {
@@ -27,7 +24,7 @@ void GameManager::CloseGame() {
 }
 
 void GameManager::InitGame() {
-	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, gameConstants.windowName);
+	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, windowName);
 	SetTargetFPS(0);
 
 	RestartGame();
@@ -40,6 +37,17 @@ void GameManager::GameLoop() {
 
 		if (!gameOver) {
 			UpdatePlayer(&bird, deltaTime);
+
+			if ((int)(timer * 1000) >= (PIPE_TIME * pipeTimer)) {
+				pipeTimer++;
+
+				std::vector<Pipe> generatedPipes = GeneratePipe();
+				for (int i = 0; i < generatedPipes.size(); i++) {
+					pipes.push_back(generatedPipes[i]);
+				}
+			}
+
+
 			UpdateEnv(&pipes, deltaTime);
 
 			if ((int)timer >= score) {
@@ -71,31 +79,36 @@ void GameManager::RenderFrame() {
 }
 
 void GameManager::RestartGame() {
-	pipes = GeneratePipes(100000);
+	//pipes = GeneratePipes(0);
 	bird.position = { BIRD_X_POS, SCREEN_HEIGHT / 2 };
 	bird.speed = 0;
 
 	timer = 0;
+	pipeTimer = 0;
 	score = 0;
+	pipes.clear();
 }
 
 void GameManager::RenderObjects() {
-	// Draw bird
+	// Draw player
 	DrawCircleV(bird.position, circleRadius, SKYBLUE);
+
 	if (DEBUG) {
+		// Player hitbox
 		DrawRectangle(
 			bird.position.x - birdHitboxRadius,
 			bird.position.y - birdHitboxRadius,
 			birdHitboxRadius * 2,
 			birdHitboxRadius * 2,
 			RED);
+
+		DrawLine(SCREEN_WIDTH / 2, -SCREEN_HEIGHT * 10, SCREEN_WIDTH / 2, SCREEN_HEIGHT * 10, RED); // vertical line
+		DrawLine(-SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, RED); // horizontal line
 	}
 
 	for (const Pipe pipe : pipes) {
 		DrawRectangle(pipe.rect.x, pipe.rect.y, pipe.rect.width, pipe.rect.height, pipe.color);
 	}
-	DrawLine(SCREEN_WIDTH / 2, -SCREEN_HEIGHT * 10, SCREEN_WIDTH / 2, SCREEN_HEIGHT * 10, RED); // vertical line
-	DrawLine(-SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, RED); // horizontal line
 }
 
 void GameManager::RenderText() {
@@ -105,8 +118,6 @@ void GameManager::RenderText() {
 	DrawText("Click 'Space' to jump", 10, 10, 20, DARKGRAY);
 	DrawText("Click 'Esc' to quit", 10, 30, 20, DARKGRAY);
 	DrawText(TextFormat("Score: %i", score), 10, 50, 20, DARKGRAY);
-	const char* fpsText = TextFormat("FPS: %i/%i (%02.02f ms)", GetFPS(), FPS, GetFrameTime());
-	DrawText(fpsText, 10, 100, 20, DARKGREEN);
 
 	if (gameOver) {
 		float size = 60;
@@ -126,7 +137,9 @@ void GameManager::RenderText() {
 
 void GameManager::RenderDebugText() {
 	// FPS Text
-
+	const char* fpsText = TextFormat("FPS: %i/%i (%02.02f ms)", GetFPS(), FPS, GetFrameTime());
+	DrawText(fpsText, 10, 100, 20, DARKGREEN);
+	// Timer text
 	const char* timerText = TextFormat("Timer: %03.0f ms", timer * 1000, FPS, GetFrameTime());
 	DrawText(timerText, 10, 130, 20, DARKGREEN);
 }
@@ -179,6 +192,10 @@ bool GameManager::IsColliding(Rectangle* dx, Rectangle* dy) {
 
 void GameManager::UpdateEnv(std::vector<Pipe>* aPipes, float deltaTime) {
 	for (int i = 0; i < pipes.size(); i++) {
+		if (pipes[i].rect.x + pipes[i].rect.width < 0) {
+			pipes.erase(pipes.begin() + i);
+		}
+
 		pipes[i].rect.x -= (SCROLLING_SPEED * deltaTime);
 	}
 }
