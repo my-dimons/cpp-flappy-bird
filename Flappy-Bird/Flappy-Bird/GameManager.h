@@ -14,9 +14,12 @@ private:
 	void RenderObjects();
 	void RenderText();
 	void RenderDebugText();
+
 	void UpdatePlayer(Bird* bird, float deltaTime);
 	void UpdateEnv(std::vector<Pipe>* pipes, float deltaTime);
+	void GeneratePipes();
+	void HandleScore();
+
 	void RestartGame();
 	bool IsColliding(Rectangle* dx, Rectangle* dy);
 };
-

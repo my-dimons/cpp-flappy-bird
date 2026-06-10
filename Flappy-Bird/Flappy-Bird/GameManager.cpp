@@ -36,26 +36,14 @@ void GameManager::GameLoop() {
 		timer += deltaTime;
 
 		if (!gameOver) {
-			UpdatePlayer(&bird, deltaTime);
-
-			if ((int)(timer * 1000) >= (PIPE_TIME * pipeTimer)) {
-				pipeTimer++;
-
-				std::vector<Pipe> generatedPipes = GeneratePipe();
-				for (int i = 0; i < generatedPipes.size(); i++) {
-					pipes.push_back(generatedPipes[i]);
-				}
-			}
-
 			if (IsKeyPressed(KEY_C)) {
 				DEBUG = !DEBUG;
 			}
 
+			HandleScore();
+			GeneratePipes();
+			UpdatePlayer(&bird, deltaTime);
 			UpdateEnv(&pipes, deltaTime);
-
-			if ((int)timer >= score) {
-				score++;
-			}
 		} else {
 			if (IsKeyPressed(KEY_V)) {
 				RestartGame();
@@ -70,6 +58,25 @@ void GameManager::GameLoop() {
 		BeginDrawing();
 		RenderFrame();
 		EndDrawing();
+	}
+}
+
+void GameManager::HandleScore()
+{
+	if ((int)timer >= score) {
+		score++;
+	}
+}
+
+void GameManager::GeneratePipes()
+{
+	if ((int)(timer * 1000) >= (PIPE_TIME * pipeTimer)) {
+		pipeTimer++;
+
+		std::vector<Pipe> generatedPipes = GeneratePipe();
+		for (int i = 0; i < generatedPipes.size(); i++) {
+			pipes.push_back(generatedPipes[i]);
+		}
 	}
 }
 
