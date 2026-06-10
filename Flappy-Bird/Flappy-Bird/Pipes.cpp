@@ -2,7 +2,7 @@
 #include "GameConstants.h"
 #include <iostream>
 
-std::vector<Pipe> GeneratePipe() {
+PipeSet GeneratePipe() {
 	Pipe topPipe{};
 	Pipe bottomPipe{};
 

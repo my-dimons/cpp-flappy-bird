@@ -6,7 +6,7 @@
 #include <iostream>
 
 Bird bird = { 0 };
-std::vector<Pipe> pipes;
+std::vector<PipeSet> pipes;
 
 const float circleRadius = 58;
 const float birdHitboxRadius = 30;
@@ -73,10 +73,7 @@ void GameManager::GeneratePipes()
 	if ((int)(timer * 1000) >= (PIPE_TIME * pipeTimer)) {
 		pipeTimer++;
 
-		std::vector<Pipe> generatedPipes = GeneratePipe();
-		for (int i = 0; i < generatedPipes.size(); i++) {
-			pipes.push_back(generatedPipes[i]);
-		}
+		pipes.push_back(GeneratePipe());
 	}
 }
 
@@ -116,8 +113,10 @@ void GameManager::RenderObjects() {
 		DrawLine(-SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, SCREEN_WIDTH * 10, SCREEN_HEIGHT / 2, RED); // horizontal line
 	}
 
-	for (const Pipe pipe : pipes) {
-		DrawRectangle(pipe.rect.x, pipe.rect.y, pipe.rect.width, pipe.rect.height, pipe.color);
+	
+	for (const PipeSet pipe : pipes) {
+		DrawRectangle(pipe.topPipe.rect.x, pipe.topPipe.rect.y, pipe.topPipe.rect.width, pipe.topPipe.rect.height, pipe.topPipe.color);
+		DrawRectangle(pipe.bottomPipe.rect.x, pipe.bottomPipe.rect.y, pipe.bottomPipe.rect.width, pipe.bottomPipe.rect.height, pipe.bottomPipe.color);
 	}
 }
 
@@ -161,7 +160,7 @@ void GameManager::UpdatePlayer(Bird* bird, float deltaTime) {
 
 	// Collision detection
 	for (int i = 0; i < pipes.size(); i++) {
-		Pipe* o = &pipes[i];
+		PipeSet* o = &pipes[i];
 		Rectangle* pRect = new Rectangle(
 			bird->position.x - birdHitboxRadius,
 			bird->position.y - birdHitboxRadius,
@@ -169,7 +168,8 @@ void GameManager::UpdatePlayer(Bird* bird, float deltaTime) {
 			birdHitboxRadius * 2);
 
 		bool colliding = 
-			IsColliding(pRect, &(o->rect)) || 
+			IsColliding(pRect, &(o->topPipe.rect)) || 
+			IsColliding(pRect, &(o->bottomPipe.rect)) || 
 			bird->position.y >= SCREEN_HEIGHT;
 
 		if (colliding) {
@@ -200,12 +200,14 @@ bool GameManager::IsColliding(Rectangle* dx, Rectangle* dy) {
 		dx->y + dx->height > dy->y;
 }
 
-void GameManager::UpdateEnv(std::vector<Pipe>* aPipes, float deltaTime) {
+void GameManager::UpdateEnv(std::vector<PipeSet>* aPipes, float deltaTime) {
 	for (int i = 0; i < pipes.size(); i++) {
-		if (pipes[i].rect.x + pipes[i].rect.width < 0) {
+		if (pipes[i].topPipe.rect.x + pipes[i].topPipe.rect.width < 0) {
 			pipes.erase(pipes.begin() + i);
 		}
 
-		pipes[i].rect.x -= (SCROLLING_SPEED * deltaTime);
+		float movement = (SCROLLING_SPEED * deltaTime);
+		pipes[i].topPipe.rect.x -= movement;
+		pipes[i].bottomPipe.rect.x -= movement;
 	}
 }

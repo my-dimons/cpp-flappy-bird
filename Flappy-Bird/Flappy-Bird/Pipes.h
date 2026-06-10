@@ -8,4 +8,9 @@ struct Pipe {
 	Color color;
 };
 
-std::vector<Pipe> GeneratePipe();
+struct PipeSet {
+	Pipe topPipe;
+	Pipe bottomPipe;
+};
+
+PipeSet GeneratePipe();
