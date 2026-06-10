@@ -25,7 +25,7 @@ void GameManager::CloseGame() {
 
 void GameManager::InitGame() {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, windowName);
-	SetTargetFPS(0);
+	SetTargetFPS(FPS);
 
 	RestartGame();
 }
@@ -47,6 +47,9 @@ void GameManager::GameLoop() {
 				}
 			}
 
+			if (IsKeyPressed(KEY_C)) {
+				DEBUG = !DEBUG;
+			}
 
 			UpdateEnv(&pipes, deltaTime);
 

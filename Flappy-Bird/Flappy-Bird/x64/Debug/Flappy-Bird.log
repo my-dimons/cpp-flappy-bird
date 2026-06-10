@@ -1,20 +1,22 @@
 ﻿  GameManager.cpp
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(102,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(101,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(100,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(99,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(110,69): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(110,52): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(110,39): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(110,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(125,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(125,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(125,90): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(130,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(130,94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(134,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(134,102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(134,93): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(105,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(104,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(103,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(102,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(113,69): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(113,52): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(113,39): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(113,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(128,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(128,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(128,90): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(133,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(133,94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(137,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(137,102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\Flappy-Bird\GameManager.cpp(137,93): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Pipes.cpp
   Generating Code...
+  LINK : C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Flappy-Bird.vcxproj -> C:\Users\kdboy\Media\Github\cpp-flappy-bird\Flappy-Bird\x64\Debug\Flappy-Bird.exe
